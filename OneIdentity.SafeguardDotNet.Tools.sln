@@ -3,12 +3,38 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F6CE22B7-407B-4B39-A873-746478C75EC3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{64C26CC7-9FD3-4D16-A5FD-2B5275A13DC7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KeePass", "KeePass", "{9BD94349-C16C-4426-97CD-B660B8CE48AF}"
+	ProjectSection(SolutionItems) = preProject
+		lib\KeePass\KeePass.exe = lib\KeePass\KeePass.exe
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeePassOneIdentitySync", "src\KeePassOneIdentitySync\KeePassOneIdentitySync.csproj", "{AFB19628-9400-4505-9C84-BA2A01F4E105}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2DFA6D6E-3D47-4654-9B98-DE6DE9D93C45}"
+	ProjectSection(SolutionItems) = preProject
+		keepass.version = keepass.version
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFB19628-9400-4505-9C84-BA2A01F4E105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFB19628-9400-4505-9C84-BA2A01F4E105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFB19628-9400-4505-9C84-BA2A01F4E105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFB19628-9400-4505-9C84-BA2A01F4E105}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9BD94349-C16C-4426-97CD-B660B8CE48AF} = {64C26CC7-9FD3-4D16-A5FD-2B5275A13DC7}
+		{AFB19628-9400-4505-9C84-BA2A01F4E105} = {F6CE22B7-407B-4B39-A873-746478C75EC3}
 	EndGlobalSection
 EndGlobal

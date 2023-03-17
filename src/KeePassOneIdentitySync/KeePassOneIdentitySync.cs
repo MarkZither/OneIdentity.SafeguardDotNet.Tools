@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using KeePass.Plugins;
 using KeePass.Forms;
 using System.Drawing;
+using System.Diagnostics;
 
 namespace KeePassOneIdentitySync
 {
@@ -21,6 +22,7 @@ namespace KeePassOneIdentitySync
         }
 
         public override bool Initialize(IPluginHost host) {
+            Debugger.Launch();
             if (host == null) return false;
             m_host = host;
             m_host.MainWindow.FileSaved += StartSync;
@@ -34,7 +36,7 @@ namespace KeePassOneIdentitySync
         }
 
         private void StartSync(Object sender, FileSavedEventArgs args) {
-            //Sync.StartSync(args.Database);
+            Synchronization.StartSync(args.Database);
         }
     }
 }

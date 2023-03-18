@@ -7,6 +7,7 @@ using KeePass.Plugins;
 using KeePass.Forms;
 using System.Drawing;
 using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace KeePassOneIdentitySync
 {
@@ -29,6 +30,30 @@ namespace KeePassOneIdentitySync
             return true;
         }
 
+        public override ToolStripMenuItem GetMenuItem(PluginMenuType t) {
+            // Provide a menu item for the main location(s)
+            if (t == PluginMenuType.Main) {
+                ToolStripMenuItem tsmi = new ToolStripMenuItem();
+                tsmi.Text = "OneIdentity Sync";
+                tsmi.Click += this.OnOptionsClicked;
+                return tsmi;
+            }
+            if (t == PluginMenuType.Group) {
+                ToolStripMenuItem tsmi = new ToolStripMenuItem();
+                tsmi.Text = "OneIdentity Sync";
+                tsmi.Click += this.OnOptionsClicked;
+                return tsmi;
+            }
+
+            return null; // No menu items in other locations
+        }
+
+        private void OnOptionsClicked(object sender, EventArgs e) {
+            Synchronization.StartSync(m_host.Database);
+            m_host.MainWindow.Refresh();
+            m_host.MainWindow.RefreshEntriesList();
+        }
+
         public override void Terminate() {
             if (m_host != null) {
                 m_host.MainWindow.FileSaved -= StartSync;
@@ -37,6 +62,7 @@ namespace KeePassOneIdentitySync
 
         private void StartSync(Object sender, FileSavedEventArgs args) {
             Synchronization.StartSync(args.Database);
+            m_host.MainWindow.Refresh();
         }
     }
 }

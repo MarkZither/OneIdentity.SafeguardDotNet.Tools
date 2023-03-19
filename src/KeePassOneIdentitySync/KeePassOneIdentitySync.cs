@@ -52,6 +52,7 @@ namespace KeePassOneIdentitySync
             Synchronization.StartSync(m_host.Database);
             m_host.MainWindow.Refresh();
             m_host.MainWindow.RefreshEntriesList();
+            m_host.MainWindow.UpdateUI(false, null, true, m_host.Database.RootGroup, true, null, false);
         }
 
         public override void Terminate() {

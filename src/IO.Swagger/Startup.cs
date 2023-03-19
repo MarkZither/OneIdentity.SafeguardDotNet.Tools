@@ -77,7 +77,7 @@ namespace IO.Swagger
                     {
                         Version = "v4",
                         Title = "Safeguard Core API",
-                        Description = "Safeguard Core API (ASP.NET Core 3.1)",
+                        Description = "Safeguard Core API (ASP.NET Core 7)",
                         Contact = new OpenApiContact()
                         {
                            Name = "Swagger Codegen Contributors",
